@@ -97,6 +97,11 @@ body {
   text-decoration: none;
 }
 
+.link_detail:hover{
+  background-color: var(--primary);
+  color: #FFFFFF;
+}
+
 @media (max-width:992px) {
   .wrap {
     gap: 60px 24px;
