@@ -1,0 +1,109 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* * {
+  outline: 1px solid red;
+} */
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 12px 0px;
+}
+
+.wrap {
+  max-width: 1476px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px 24px;
+  padding: 0px 12px;
+}
+
+.card_photo {
+  margin-bottom: 16px;
+}
+
+.card {
+  width: calc(33.33% - 16px);
+  /* width:calc(33.33% - 8px); */
+  /* margin-bottom: 80px; */
+}
+
+.date {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.5;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.tag {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #0027D5;
+}
+
+.content {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4B4B4B;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* 顯示兩行 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link_detail {
+  display: inline-block;
+  border-radius: 40px;
+  border: 1px solid #000000;
+  padding: 8px 16px;
+  color: #4B4B4B;
+  text-decoration: none;
+}
+
+@media (max-width:992px) {
+  .wrap {
+    gap: 60px 12px;
+  }
+
+  .card {
+    width: calc(50% - 8px);
+  }
+}
+
+@media (max-width:576px) {
+  .wrap {
+    gap: 32px 0px;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
