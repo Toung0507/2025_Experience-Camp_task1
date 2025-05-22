@@ -4,17 +4,21 @@
   box-sizing: border-box;
 }
 
-/* * {
-  outline: 1px solid red;
-} */
+:root {
+  --primary: #0027D5;
+  --radius: 40px;
+}
 
 img {
   width: 100%;
   object-fit: cover;
+  display: block;
 }
 
 body {
   font-family: "Noto Sans TC", sans-serif;
+  line-height: 1.5;
+  color: #000000;
 }
 
 .container {
@@ -38,50 +42,54 @@ body {
 
 .card {
   width: calc(33.33% - 16px);
-  /* width:calc(33.33% - 8px); */
-  /* margin-bottom: 80px; */
+  /* 總間隔 48px 除以三個卡片 一個扣 16 px */
 }
 
 .date {
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #000000;
   margin-bottom: 4px;
 }
 
 .title {
   font-weight: 700;
   font-size: 28px;
-  line-height: 1.5;
-  color: #000000;
   margin-bottom: 8px;
 }
 
 .tag {
   font-weight: 500;
   font-size: 24px;
-  line-height: 1.5;
-  color: #0027D5;
+  color: var(--primary);
+}
+
+.important_tag {
+  background-color: var(--primary);
+  padding: 6px 12px;
+  color: #FFFFFF;
+  border-radius: var(--radius);
+  font-weight: 700;
+  margin-left: 8px;
+  display: inline-block;
+  vertical-align: text-top;
 }
 
 .content {
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
   color: #4B4B4B;
   margin-bottom: 16px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  /* 顯示兩行 */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;  /* 最多顯示兩行，但這個相容性是支援以 -webkit 開發的瀏覽器，通常不支援 IE 跟 FireFox */
+  -webkit-box-orient: vertical; /* 搭配 display: -webkit-box; 使用 */ 
+  overflow: hidden; /* 超出的範圍要隱藏 */
+  text-overflow: ellipsis; /* 省略號的意思 */
 }
+
+/* 用CSS讓過長文字自動以「…」呈現 https://www.webdesigns.com.tw/css_text-overflow.asp */
+/* 用CSS讓過長文字自動以「…」呈現 https://vocus.cc/article/67820f4afd89780001f79007 */
 
 .link_detail {
   display: inline-block;
-  border-radius: 40px;
+  border-radius: var(--radius);
   border: 1px solid #000000;
   padding: 8px 16px;
   color: #4B4B4B;
@@ -90,11 +98,11 @@ body {
 
 @media (max-width:992px) {
   .wrap {
-    gap: 60px 12px;
+    gap: 60px 24px;
   }
 
   .card {
-    width: calc(50% - 8px);
+    width: calc(50% - 12px); /* 總間隔 24 px ，共兩個卡片 24 / 2 */
   }
 }
 
